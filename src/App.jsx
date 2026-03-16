@@ -3,47 +3,47 @@ import './App.css'
 
 const openings = [
   (a, b) =>
-    `${a}, her gece aynı rüyayı görüyordu: ${b} ile örülmüş bir labirent, sonunda bekleyen tanıdık bir siluet. O siluet, yıllar önce kaybettiği biriydi.`,
+    `Kimse ${a} ile ${b} arasında bir bağlantı olabileceğini düşünmemişti — ta ki eski bir manastırın duvarlarında, ikisini aynı cümlede anan bir yazıt bulunana dek. Yazıt yüzlerce yıllıktı, ama mürekkebi hâlâ ıslaktı.`,
   (a, b) =>
-    `Şehrin en eski kütüphanesinin bodrum katında, ${a} tozlu bir defterin arasına sıkışmış bir fotoğraf buldu. Fotoğrafta ${b} vardı — ve fotoğrafın arkasında ${a}'nın kendi el yazısıyla yazılmış bir tarih: henüz gelmemiş bir yılın tarihi.`,
+    `Her şey, bir akademisyenin ${a} üzerine yaptığı araştırma sırasında ${b} ile ilgili açıklanamaz bir veriyle karşılaşmasıyla başladı. İki kavram birbirinden bu kadar uzakken, aynı denklemin iki yanında belirmesi imkânsız olmalıydı.`,
   (a, b) =>
-    `${a} mesleği gereği yalanlara alışıktı, ama ${b} ile ilk karşılaştığı gün duyduğu sessizlik, hiçbir yalandan daha rahatsız ediciydi. Çünkü ${b}, ${a}'nın sorularına cevap vermiyordu — sorularını bitirmeden yanıtlıyordu.`,
+    `${a} hakkında yazılmış en eski metin, son satırında ${b}'den söz ediyordu. Yüzyıllardır kimse bu satırı ciddiye almamıştı. Ama şimdi, o satırdaki kehanet kelimesi kelimesine gerçekleşiyordu.`,
   (a, b) =>
-    `Kasabanın yaşlıları ${b} hakkında konuşmayı reddederdi. ${a} nedenini anlamak için yirmi yıl bekledi. Cevabı bulduğunda, keşke hiç sormamış olmayı diledi.`,
+    `İstanbul'un kayıp arşivlerinde bir harita bulundu. Haritanın bir yüzünde ${a}'nın haritası, diğer yüzünde ${b}'nin şifresi vardı. İkisi üst üste konduğunda ortaya çıkan desen, bilinen hiçbir sembole benzemiyordu — ama herkes onu tanıyormuş gibi hissediyordu.`,
   (a, b) =>
-    `${a}, o mektubu açmamalıydı. İçinde tek bir cümle vardı: "${b} seni unutmadı." Sorun şu ki, mektubu gönderen kişi ${a}'nın ta kendisiydi — ve bunu hatırlamıyordu.`,
+    `${a} ile ${b}, görünürde birbirine zıt iki kavramdı. Ama bir gece yarısı radyo sinyalinde ikisi aynı frekansta titreşmeye başladı. Bu, bir tesadüf olamazdı — çünkü tesadüfler bu kadar kusursuz geometriler çizmezdi.`,
   (a, b) =>
-    `İstanbul'un arka sokaklarında bir antikacı, ${a}'ya garip bir teklif sundu: ${b} ile ilgili her şeyi öğrenebilirsin, ama karşılığında bir anını vermek zorundasın. ${a} kabul etti. Verdiği anının ne olduğunu ise ancak çok geç fark etti.`,
+    `Bir çocuk, okul defterinin kenarına ${a} ve ${b} yazdı, aralarına bir çizgi çekti. Ertesi gün öğretmeni o çizgiye baktığında rengi soldu. Çünkü o çizgi, yıllar önce kaybolmuş bir formülün eksik parçasıydı.`,
 ]
 
 const twists = [
   (a, b) =>
-    `Gerçek, ${a}'nın düşündüğünden çok daha karanlıktı: ${b}, bir tesadüf değil, nesiller öncesinden kurgulanmış bir planın parçasıydı. Ve ${a}, bu planın hem kurbanı hem de mimarıydı.`,
+    `Araştırma derinleştikçe ortaya sarsıcı bir örüntü çıktı: tarih boyunca ${a} güçlendiği her dönemde ${b} zayıflamış, ${b} yükseldiği her çağda ${a} gölgede kalmıştı. Sanki ikisi aynı terazinin iki kefesiydi — ve biri ağırlaştığında diğeri zorunlu olarak yükseliyordu.`,
   (a, b) =>
-    `Araştırdıkça ${a}'nın gerçekliği çatırdamaya başladı. ${b}, yalnızca bir kavram değildi — başka bir zamanın, başka bir ${a}'nın bıraktığı bir izdi. Her iz, bir sonraki adımı gösteriyordu ama aynı zamanda bir önceki adımı siliyordu.`,
+    `Gerçek, herkesin sandığından daha rahatsız ediciydi: ${a} ve ${b} birbirinin karşıtı değildi. Aynı şeyin, farklı zamanlara düşmüş iki gölgesiydi. Ve gölgelerin asıl sahibi — henüz kimsenin adını koymaya cesaret edemediği üçüncü bir kavram — uyanmak üzereydi.`,
   (a, b) =>
-    `${a} ipuçlarını birleştirdiğinde tüyler ürpertici bir örüntü ortaya çıktı: ${b} ile temas eden herkes, hayatının en kritik kararını bir gün içinde vermiş — ve hepsi aynı seçimi yapmıştı.`,
+    `En tüyler ürpertici keşif şuydu: ${a} hakkında düşünmeye başlayan herkes, farkında olmadan ${b} hakkında da rüya görüyordu. Beyin taramaları bunu doğruluyordu — iki kavram, insan zihninde aynı nöral yolu paylaşıyordu. Sanki bilinç, ikisini ayırt edemiyordu.`,
   (a, b) =>
-    `En büyük sürpriz, ${b} ile ${a} arasındaki bağın mahiyetiydi. Onlar düşman ya da müttefik değildi; aynı bilincin, zamanın iki ucuna saçılmış iki yansımasıydı.`,
+    `Dönüm noktası beklenmedik yerden geldi: ${a} kavramını dünyadan silmeye çalışan bir deney sırasında, ${b} de solmaya başladı. İkisinin arasındaki bağ, sebep-sonuç ilişkisinden çok daha derindi — biri olmadan diğeri var olamıyordu, tıpkı bir madalyonun iki yüzü gibi.`,
   (a, b) =>
-    `Dönüm noktası beklenmedik yerden geldi: ${b}, yok olmaya başlıyordu — ama yok oldukça ${a}'nın hatırlaması imkânsız olan anıları geri geliyordu. Sanki biri, diğerinin unuttuklarından besleniyordu.`,
+    `Şifreyi çözen kişi delirdiğini sandı: ${a} ile ${b} arasındaki ilişki doğrusal değildi. ${b}, ${a}'nın geleceğiydi — ama aynı zamanda ${a}, ${b}'nin geçmişiydi. Bir zaman döngüsüne hapsolmuş iki kavram, birbirini sonsuz kere yeniden yaratıyordu.`,
   (a, b) =>
-    `${a} gerçeği öğrendiğinde dünya sessizleşti: ${b} hep oradaydı, her zaman. Değişen ${b} değildi — ${b}'yi göremeyen gözlerdi. Ve şimdi gözler açılmıştı, kapanması mümkün olmayan bir şekilde.`,
+    `Veriler tek bir sonuca işaret ediyordu: ${a} ve ${b}, aslında aynı gerçeğin iki dilde söylenmiş haliydi. Biri insanlığın bilinçaltında, diğeri kolektif hafızasında yaşıyordu. Ve ikisi bir araya geldiğinde ortaya çıkan anlam, her iki kavramın da ayrı ayrı taşıdığı anlamdan tamamen farklıydı.`,
 ]
 
 const endings = [
   (a, b) =>
-    `Sonunda ${a} bir seçimle karşı karşıya kaldı: ${b} ile birlikte gerçeği dünyaya açmak ya da bu sırrı sonsuza dek gömmek. Her iki yol da bir bedel istiyordu — ve ${a}, bedelini çoktan ödemeye başlamıştı.`,
+    `Sonunda herkes bir seçimle karşı karşıya kaldı: ${a} ve ${b} arasındaki bu bağı dünyaya açıklamak, insanlığın bildiklerini kökünden sarsabilirdi. Ya da bu sır gömülürdü — ama bir kez görülen gerçeği unutmanın da bir bedeli vardı. Ve o bedeli ilk ödeyenler, gerçeği bulanlar olacaktı.`,
   (a, b) =>
-    `Hikâyenin sonu yoktu, çünkü ${a} anladı ki ${b} bir son değil, sonsuz bir başlangıçtı. Her kapanan kapı, açılmamış bir başka kapının anahtarını taşıyordu. ${a} yürümeye devam etti — bu sefer korkuyla değil, merakla.`,
+    `Hikâyenin sonu yoktu. Çünkü ${a} ile ${b} arasındaki ilişki, anlaşıldıkça büyüyen bir muammaydı. Her cevap üç yeni soru doğuruyordu. Ve belki de asıl hikâye, cevapları aramak değil, soruların bizi nereye götürdüğüydü.`,
   (a, b) =>
-    `${a}, her şeyi geride bırakabilirdi. Ama ${b}'nin fısıldadığı son cümle, geri dönüşü imkânsız kıldı: "Beni arayan herkes, aslında kendini arıyordu. Sen de buldun mu?" ${a} cevabı biliyordu ama söylemeye cesaret edemiyordu.`,
+    `Bu keşfi duyan son kişi, defterine tek bir cümle yazdı: "${a} ile ${b} aynı nehrin iki kıyısıdır. Nehri geçmeye çalışan boğulur, ama kıyıda kalanlar nehrin sesini ömür boyu duyar." Defteri kapattı ve bir daha açmadı — ama nehrin sesi, okuyanlara hâlâ ulaşıyor.`,
   (a, b) =>
-    `Ve böylece ${a}, ${b} ile başlayan bu yolculuğun aslında bir döngü olduğunu kavradı. Başlangıç noktasına döndüğünde her şey aynıydı — tek farkla: artık ${a}, aynı kişi değildi. Hiçbir yolculuk, yolcusunu değiştirmeden bırakmaz.`,
+    `Ve böylece ${a} ile ${b} yeniden ayrıldı — ama artık herkes biliyordu ki bu ayrılık geçiciydi. İkisi her karşılaştığında dünya biraz daha değişiyordu. Bir sonraki karşılaşma ne zaman olacaktı? Kimse bilmiyordu. Ama herkes hissediyordu: yakında.`,
   (a, b) =>
-    `Son sayfa kapandığında ${a} fark etti: ${b}, bir cevap değilmiş hiçbir zaman. Doğru soruyu sormayı öğretmek için var olmuş. Ve doğru soru şuydu: "Ya tüm bildiklerim yanlışsa?" Bu soru, her şeyi yeniden başlattı.`,
+    `Aradan yıllar geçti. ${a} ve ${b} arasındaki bağı keşfeden ekipten kimse konuşmadı. Ama garip bir şey oldu: o günden sonra ${a} ile ${b}'yi aynı cümlede kullanan herkes, cümlesini bitirdikten sonra birkaç saniye duraklıyor, açıklayamadığı bir ürperti hissediyordu. Bazı gerçekler kelimelerden büyüktür.`,
   (a, b) =>
-    `${a} bu hikâyeyi kimseye anlatamadı. Çünkü ${b} hakkında konuşmaya başlayan herkes, aynı rüyayı görmeye başlıyordu. Ve ${a}, bir başkasını daha o labirente çekmeye hazır değildi — en azından henüz.`,
+    `Son satır yazıldığında ortaya çıkan şuydu: ${a} ve ${b} ne birbirinin sebebi ne de sonucuydu. İkisi birlikte, insanlığın henüz adını koyamadığı daha büyük bir kavramın parçalarıydı. O kavramı anlamak, belki de bir sonraki yüzyılın işiydi. Ya da belki bir sonraki cümlenin.`,
 ]
 
 function pickRandom(arr) {
@@ -79,14 +79,14 @@ function App() {
   return (
     <div className="app">
       <h1>Hikaye Konusu Üretici</h1>
-      <p className="subtitle">İki kelime girin, size bir hikaye konusu üretelim!</p>
+      <p className="subtitle">İki tema girin, aralarındaki gizli bağı keşfedin!</p>
 
       <div className="input-group">
-        <label htmlFor="input1">Karakter / İsim</label>
+        <label htmlFor="input1">Birinci Tema</label>
         <input
           id="input1"
           type="text"
-          placeholder="Örn: Elif"
+          placeholder="Örn: yalnızlık"
           value={input1}
           onChange={(e) => setInput1(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -94,11 +94,11 @@ function App() {
       </div>
 
       <div className="input-group">
-        <label htmlFor="input2">Tema / Nesne</label>
+        <label htmlFor="input2">İkinci Tema</label>
         <input
           id="input2"
           type="text"
-          placeholder="Örn: gizemli orman"
+          placeholder="Örn: müzik"
           value={input2}
           onChange={(e) => setInput2(e.target.value)}
           onKeyDown={handleKeyDown}
