@@ -1,28 +1,62 @@
 import { useState } from 'react'
 import './App.css'
 
-const storyTemplates = [
+const openings = [
   (a, b) =>
-    `${a} adlı bir kahraman, ${b} ile dolu gizemli bir dünyada kaybolur. Tek çıkış yolu, ${b} hakkındaki tüm sırları çözmektir. Ancak her sır, onu daha derin bir maceraya sürükler...`,
+    `${a}, her gece aynı rüyayı görüyordu: ${b} ile örülmüş bir labirent, sonunda bekleyen tanıdık bir siluet. O siluet, yıllar önce kaybettiği biriydi.`,
   (a, b) =>
-    `Uzak bir gelecekte, ${b} artık insanlığın en büyük sorunu haline gelmiştir. ${a}, bu sorunu çözmek için yola çıkan son umuttur. Yolculuğu sırasında ${b} ile ilgili beklenmedik bir gerçeği keşfeder...`,
+    `Şehrin en eski kütüphanesinin bodrum katında, ${a} tozlu bir defterin arasına sıkışmış bir fotoğraf buldu. Fotoğrafta ${b} vardı — ve fotoğrafın arkasında ${a}'nın kendi el yazısıyla yazılmış bir tarih: henüz gelmemiş bir yılın tarihi.`,
   (a, b) =>
-    `${a}, sıradan bir gün geçirirken aniden ${b} ile karşılaşır. Bu karşılaşma hayatını sonsuza dek değiştirecektir. Çünkü ${b}, aslında unutulmuş bir kehaneti tetikleyen anahtardır...`,
+    `${a} mesleği gereği yalanlara alışıktı, ama ${b} ile ilk karşılaştığı gün duyduğu sessizlik, hiçbir yalandan daha rahatsız ediciydi. Çünkü ${b}, ${a}'nın sorularına cevap vermiyordu — sorularını bitirmeden yanıtlıyordu.`,
   (a, b) =>
-    `Küçük bir kasabada yaşayan ${a}, bir gece ${b} hakkında tuhaf bir rüya görür. Ertesi sabah, rüyadaki her şeyin gerçek olduğunu fark eder. Şimdi ${b} ile yüzleşmek zorundadır...`,
+    `Kasabanın yaşlıları ${b} hakkında konuşmayı reddederdi. ${a} nedenini anlamak için yirmi yıl bekledi. Cevabı bulduğunda, keşke hiç sormamış olmayı diledi.`,
   (a, b) =>
-    `${a} adında bir dedektif, ${b} ile bağlantılı bir dizi gizemli olayı araştırmaktadır. Her ipucu onu daha karanlık bir komploya götürür. ${b}, sandığından çok daha tehlikeli bir sırrı barındırmaktadır...`,
+    `${a}, o mektubu açmamalıydı. İçinde tek bir cümle vardı: "${b} seni unutmadı." Sorun şu ki, mektubu gönderen kişi ${a}'nın ta kendisiydi — ve bunu hatırlamıyordu.`,
   (a, b) =>
-    `Yıl 2150. ${a}, ${b} konusunda uzmanlaşmış son bilim insanıdır. Bir deney sırasında ${b} beklenmedik bir şekilde canlanır ve ${a} ile konuşmaya başlar...`,
-  (a, b) =>
-    `${a}, çocukluğundan beri ${b} tarafından büyülenmiştir. Yıllar sonra, ${b} ile ilgili eski bir harita bulur. Harita onu dünyanın en uzak köşesine, unutulmuş bir medeniyetin kalıntılarına götürür...`,
-  (a, b) =>
-    `Bir fırtına gecesi, ${a} kapısının önünde ${b} ile ilgili şifreli bir mektup bulur. Mektubu çözdüğünde, ailesinin ${b} ile olan gizli bağını öğrenir ve tehlikeli bir yolculuğa çıkmak zorunda kalır...`,
+    `İstanbul'un arka sokaklarında bir antikacı, ${a}'ya garip bir teklif sundu: ${b} ile ilgili her şeyi öğrenebilirsin, ama karşılığında bir anını vermek zorundasın. ${a} kabul etti. Verdiği anının ne olduğunu ise ancak çok geç fark etti.`,
 ]
 
+const twists = [
+  (a, b) =>
+    `Gerçek, ${a}'nın düşündüğünden çok daha karanlıktı: ${b}, bir tesadüf değil, nesiller öncesinden kurgulanmış bir planın parçasıydı. Ve ${a}, bu planın hem kurbanı hem de mimarıydı.`,
+  (a, b) =>
+    `Araştırdıkça ${a}'nın gerçekliği çatırdamaya başladı. ${b}, yalnızca bir kavram değildi — başka bir zamanın, başka bir ${a}'nın bıraktığı bir izdi. Her iz, bir sonraki adımı gösteriyordu ama aynı zamanda bir önceki adımı siliyordu.`,
+  (a, b) =>
+    `${a} ipuçlarını birleştirdiğinde tüyler ürpertici bir örüntü ortaya çıktı: ${b} ile temas eden herkes, hayatının en kritik kararını bir gün içinde vermiş — ve hepsi aynı seçimi yapmıştı.`,
+  (a, b) =>
+    `En büyük sürpriz, ${b} ile ${a} arasındaki bağın mahiyetiydi. Onlar düşman ya da müttefik değildi; aynı bilincin, zamanın iki ucuna saçılmış iki yansımasıydı.`,
+  (a, b) =>
+    `Dönüm noktası beklenmedik yerden geldi: ${b}, yok olmaya başlıyordu — ama yok oldukça ${a}'nın hatırlaması imkânsız olan anıları geri geliyordu. Sanki biri, diğerinin unuttuklarından besleniyordu.`,
+  (a, b) =>
+    `${a} gerçeği öğrendiğinde dünya sessizleşti: ${b} hep oradaydı, her zaman. Değişen ${b} değildi — ${b}'yi göremeyen gözlerdi. Ve şimdi gözler açılmıştı, kapanması mümkün olmayan bir şekilde.`,
+]
+
+const endings = [
+  (a, b) =>
+    `Sonunda ${a} bir seçimle karşı karşıya kaldı: ${b} ile birlikte gerçeği dünyaya açmak ya da bu sırrı sonsuza dek gömmek. Her iki yol da bir bedel istiyordu — ve ${a}, bedelini çoktan ödemeye başlamıştı.`,
+  (a, b) =>
+    `Hikâyenin sonu yoktu, çünkü ${a} anladı ki ${b} bir son değil, sonsuz bir başlangıçtı. Her kapanan kapı, açılmamış bir başka kapının anahtarını taşıyordu. ${a} yürümeye devam etti — bu sefer korkuyla değil, merakla.`,
+  (a, b) =>
+    `${a}, her şeyi geride bırakabilirdi. Ama ${b}'nin fısıldadığı son cümle, geri dönüşü imkânsız kıldı: "Beni arayan herkes, aslında kendini arıyordu. Sen de buldun mu?" ${a} cevabı biliyordu ama söylemeye cesaret edemiyordu.`,
+  (a, b) =>
+    `Ve böylece ${a}, ${b} ile başlayan bu yolculuğun aslında bir döngü olduğunu kavradı. Başlangıç noktasına döndüğünde her şey aynıydı — tek farkla: artık ${a}, aynı kişi değildi. Hiçbir yolculuk, yolcusunu değiştirmeden bırakmaz.`,
+  (a, b) =>
+    `Son sayfa kapandığında ${a} fark etti: ${b}, bir cevap değilmiş hiçbir zaman. Doğru soruyu sormayı öğretmek için var olmuş. Ve doğru soru şuydu: "Ya tüm bildiklerim yanlışsa?" Bu soru, her şeyi yeniden başlattı.`,
+  (a, b) =>
+    `${a} bu hikâyeyi kimseye anlatamadı. Çünkü ${b} hakkında konuşmaya başlayan herkes, aynı rüyayı görmeye başlıyordu. Ve ${a}, bir başkasını daha o labirente çekmeye hazır değildi — en azından henüz.`,
+]
+
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
 function generateStory(input1, input2) {
-  const index = Math.floor(Math.random() * storyTemplates.length)
-  return storyTemplates[index](input1.trim(), input2.trim())
+  const a = input1.trim()
+  const b = input2.trim()
+  const opening = pickRandom(openings)(a, b)
+  const twist = pickRandom(twists)(a, b)
+  const ending = pickRandom(endings)(a, b)
+  return `${opening}\n\n${twist}\n\n${ending}`
 }
 
 function App() {
@@ -82,7 +116,9 @@ function App() {
       {story && (
         <div className="result">
           <h2>Hikaye Konunuz</h2>
-          <p>{story}</p>
+          {story.split('\n\n').map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
         </div>
       )}
     </div>
